@@ -1,7 +1,9 @@
-from FtxClient import FtxClient
+from util.FtxClient import FtxClient
 import os
 import time
 import math
+import matplotlib.pyplot as plt
+import pandas as pd
 
 
 api_key = os.environ['API_KEY']
@@ -102,10 +104,28 @@ append_hma(data, math.ceil(lookback ** 0.5))
 
 print(data[-1])
 
-close = [x['close'] for x in data]
-bench_wma_1 = bench_weighted_moving_average(close, lookback)
-print(bench_wma_1)
-bench_wma_2 = bench_weighted_moving_average(close, lookback // 2)
-print(bench_wma_2)
-bench_hma = bench_hull_moving_average(close, lookback)
-print(bench_hma)
+last_data = data[-125:]
+
+
+for index in range(0, len(last_data)):
+    last_data[index].update({'ts': last_data[index]['time'] / 1000 })
+
+df = pd.DataFrame.from_dict(last_data)
+print(df)
+
+
+plt.figure(figsize=(20, 10))
+plt.plot(df['ts'], df['close'], color="black")
+plt.plot(df['ts'], df['hma'], color="blue")
+plt.title("HMA")
+plt.xticks(rotation='30')
+plt.xlabel('time')
+plt.show()
+
+# close = [x['close'] for x in data]
+# bench_wma_1 = bench_weighted_moving_average(close, lookback)
+# print(bench_wma_1)
+# bench_wma_2 = bench_weighted_moving_average(close, lookback // 2)
+# print(bench_wma_2)
+# bench_hma = bench_hull_moving_average(close, lookback)
+# print(bench_hma)
