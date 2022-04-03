@@ -42,7 +42,7 @@ Pour chaque période :
 * On calcule la `WMA_20` (moyenne mobile pondérée lente)
 * On calcule la `WMA_10` (pour N/2, moyenne mobile pondérée rapide)
 * On calcule le `delta = 2*WMA_10 - WMA_20`. Cette valeur vaut 2 fois la moyenne mobile rapide, moins la moyenne mobile lente.
-* On calcule la `HMA` : moyenne mobile pondérée du `delta`, calculée sur `&radic;N. &radic;20 = 4.47` (arrondi à 5...)
+* On calcule la `HMA` : moyenne mobile pondérée du `delta`, calculée sur &radic;N. &radic;20 = 4.47 (arrondi à 5...)
 
 [https://oxfordstrat.com/trading-strategies/hull-moving-average/](https://oxfordstrat.com/trading-strategies/hull-moving-average/)
 
