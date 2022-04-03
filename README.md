@@ -22,6 +22,7 @@ resolution = 3600 (1 heure)
 |2022-04-03T13:00:00|997|18|3498.9|
 |2022-04-03T14:00:00|998|19|3513.7|
 |2022-04-03T15:00:00|999|20|3518.1|
+
 somme / (n*(n + 1) / 2) = 3487.3290476190473
 
 C'est une moyenne mobile, avec des poids croissants : sur 20 périodes, le close de la dernière période a un poids de 20, le précédent 19...
