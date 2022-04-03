@@ -56,7 +56,7 @@ Pour chaque période :
 * On calcule la `EMA_20` (moyenne mobile exponentielle lente)
 * On calcule la `EMA_10` (pour N/2, moyenne mobile exponentielle rapide)
 * On calcule le `delta = 2*EMA_10 - EMA_20`. Cette valeur vaut 2 fois la moyenne mobile rapide, moins la moyenne mobile lente.
-* On calcule la `EHMA` : moyenne mobile exponentielle du `delta`, calculée sur `&radic;N. &radic;20 = 4.47` (arrondi à 5...)
+* On calcule la `EHMA` : moyenne mobile exponentielle du `delta`, calculée sur &radic;N. &radic;20 = 4.47 (arrondi à 5...)
 
 ### Trading
 
@@ -75,7 +75,7 @@ resolution = 604800 (1 semaine)
 Tradingview :
 ![tradingview](./doc/tradingview_btcusd_1w_ehma.PNG?raw=true)
 
-Python :
+Python 3_ehma_colored.py :
 ![python](./doc/python_btcusd_1w_ehma.PNG?raw=true)
 
 ## Hull-WEMA
